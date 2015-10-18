@@ -1,0 +1,1 @@
+<a class="pull-right" href="{{Route('administrador.users.index')}}"><img src="{{asset('images/btn-back.png')}}" alt="" style="  width: 25px;"></a>
