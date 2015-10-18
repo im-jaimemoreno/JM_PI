@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: JaimeMoreno
- * Date: 18/10/2015
- * Time: 1:06 AM
+ * Date: 19/10/2015
+ * Time: 10:35 AM
  */
 ?>
 @extends('app')
