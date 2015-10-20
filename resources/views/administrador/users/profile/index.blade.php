@@ -7,14 +7,14 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<b>Perfil</b>
-					@include('admin.partials.back')
+					@include('administrador.partials.back')
 				</div>
 				@if(Session::has('message'))
 					<p class="alert alert-success">{{Session::get('message')}}</p>
 				@endif
 				<div class="panel-body">
 					<div class="profile-pic" style=" padding:20px;">
-						<img src="{{asset($profile->photo)}}" alt="" style="width: 150px;  border: 1px solid black;">
+						<img src="{{route('administrador.users.profile.photo', $profile->photo)}}" alt="" style="width: 150px;  border: 1px solid black;">
 					</div>
 					
 					<div class="name">
@@ -39,7 +39,7 @@
 					</div>
 				</div>
 				<div class="btn-edit" style="text-align:right;">
-					<a class="btn btn-info" style="margin:20px;" href="{{Route('admin.users.profile.edit', $profile->id)}}">Editar</a>
+					<a class="btn btn-info" style="margin:20px;" href="{{Route('administrador.users.profile.edit', $profile->id)}}">Editar</a>
 				</div>
 				
 			</div>

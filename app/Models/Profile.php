@@ -10,13 +10,13 @@ class Profile extends Model implements AuthenticatableContract, CanResetPassword
 
 	use Authenticatable, CanResetPassword;
 
-	protected $table = 'user_profiles';
-	protected $fillable = ['user_id', 'bio', 'tweeter','facebook', 'website'];
+	protected $table = 'user_profile';
+	protected $fillable = ['user_id', 'bio', 'tweeter','facebook', 'website', ''];
 	//protected $primaryKey='userid';
 
 
 	public function getProfile(){
-		return $this->belongsTo('User', 'userid');
+		return $this->belongsTo('User', 'user_id');
 	}
 
 }
