@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/','principal\PrincipalController');
+Route::get('photo/{id}',['as'=>'photohero', 'uses'=>'principal\PrincipalController@getHeroPhoto']);
+
 Route::get('administrador',['middleware' => 'auth','uses'=>'HomeController@index'] );
 
 Route::controllers([
@@ -33,6 +33,12 @@ Route::group(['prefix'=>'administrador', 'namespace' => 'Admin'], function(){
 
     Route::group(['prefix'=>'productos', 'namespace' => 'Product'], function() {
         Route::get('items',['as'=>'productos.listaproduct', 'uses'=>'ProductoController@index']);
+        Route::get('items/{item}/delete',['as'=>'productos.listaproduct.destroy', 'uses'=>'ProductoController@destroy']);
+        Route::put('items/{item}/update',['as'=>'productos.listaproduct.update', 'uses'=>'ProductoController@update']);
+        Route::get('items/{item}/edit',['as'=>'productos.listaproduct.edit', 'uses'=>'ProductoController@edit']);
+        Route::get('items/photo/{item}', ['as'=>'productos.listaproduct.photo', 'uses'=>'ProductoController@getProductoPhoto']);
+        Route::get('items/create', ['as'=>'productos.listaproduct.create', 'uses'=>'ProductoController@create']);
+        Route::post('items/store', ['as'=>'productos.listaproduct.store', 'uses'=>'ProductoController@store']);
         //::get('items/{item}',['as'=>'productos.productodet', 'uses'=>'ProductoController@item']);
     });
     Route::resource('contactanos', 'ContactanosController');

@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+        \Blade::setEchoFormat('e(utf8_encode(%s))');
     }
 
     /**

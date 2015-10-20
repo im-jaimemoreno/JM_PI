@@ -14,7 +14,7 @@
                     <div class="panel-body">
 
                         <p>
-                            <a href="{{ route('administrador.users.create')}}" style="float: right; margin: 10px;" class="btn btn-info" role="button">Nuevo Usuario</a>
+                            <a href="{{ route('productos.listaproduct.create')}}" style="float: right; margin: 10px;" class="btn btn-info" role="button">Nuevo Producto</a>
                         </p>
                         @include('productos.partials.list')
                         {!! $productos->render()!!}
@@ -23,14 +23,13 @@
             </div>
         </div>
     </div>
-    {!!Form::open(['route'=>['administrador.users.destroy', ':USERS_ID'], 'method'=>'DELETE', 'id' =>'form-delete'])!!}
-    {!!Form::close()!!}
+
 @endsection
 
 @section('scripts')
     <script>
         $(document).ready(function(){
-            $('.btn-delete').click(function(){
+            /*$('.btn-delete').click(function(){
                 var row = $(this).parents('tr');
                 var id = row.data('id');
                 var form =$('#form-delete');
@@ -49,7 +48,7 @@
                 });
 
 
-            });
+            });*/
 
         });
     </script>

@@ -44,26 +44,26 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <i class="fa fa-fw fa-dashboard"></i> Dashboard
                 </li>
                 <li>
-                    <a href="{{route('administrador.users.profile', Auth::user()->id)}}"><i class="fa fa-fw fa-bar-chart-o"></i> Perfil</a>
+                    <a href="{{route('administrador.users.profile', Auth::user()->id)}}"><i class="glyphicon glyphicon-user"></i> Perfil</a>
                 </li>
                 <li>
-                    <a href="{{route('administrador.users.index', Auth::user()->id)}}"><i class="fa fa-fw fa-table"></i> Usuarios</a>
+                    <a href="{{route('administrador.users.index', Auth::user()->id)}}"><i class="fa fa-fw fa-users"></i> Usuarios</a>
                 </li>
                 <li>
-                    <a href="{{route('productos.listaproduct')}}"><i class="fa fa-fw fa-table"></i> Productos</a>
+                    <a href="{{route('productos.listaproduct')}}"><i class="glyphicon glyphicon-list-alt"></i> Productos</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Info.Contacto</a>
+                    <a href="{{route('administrador.contactanos.index')}}"><i class="glyphicon glyphicon-envelope"></i>Contactanos</a>
                 </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
+    <div id="page-wrapper"  style=" padding: 20px;  min-height: 90vh;">
 
         <div class="container-fluid">
 

@@ -34,5 +34,38 @@ class FirstAdminSeed extends Seeder
             'facebook'=>'imjaimemoreno',
             'website'=>'...',
         ));*/
+        \DB::table('PaginaMaestra')->insert(array(
+                'id' => 1,
+                'PhotoHero'=>'hero1.jpg',
+                'minetype'=>'image/jpeg',
+                'Title'=>'INNOVACIÓN Y FLEXIBIBLIDAD',
+                'content'=>'Resultados de calidad',
+
+                'whoedit'=>1
+
+        ));
+
+        \DB::table('PaginaMaestra')->insert(array(
+            'id' => 2,
+            'PhotoHero'=>'hero2.jpg',
+            'minetype'=>'image/jpeg',
+            'Title'=>'GENERANDO SOLUCIONES',
+            'content'=>'Prácticas y acertivas',
+
+            'whoedit'=>1
+
+        ));
+
+        \DB::table('PaginaMaestra')->insert(array(
+            'id' => 3,
+            'PhotoHero'=>'hero1.jpg',
+            'minetype'=>'image/jpeg',
+            'Title'=>'CREATIVIDAD Y ARTE',
+            'content'=>'Van juntas de la mano',
+
+            'whoedit'=>1
+
+        ));
+
     }
 }

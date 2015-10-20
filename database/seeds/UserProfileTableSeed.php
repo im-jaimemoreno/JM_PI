@@ -10,11 +10,11 @@ class UserProfileTableSeed extends Seeder{
 		//$users =User::all()->lists('id');
 		$users =DB::table('users')->lists('id');//User::all();
 
-		for($i=0; $i<10; $i++){
+		for($i=2; $i<12; $i++){
 
 			\DB::table('user_profile')->insert(array(
 
-				'user_id'=>$users[$i],
+				'user_id'=>$i,
 				'bio'=>$faker->text,
 				'tweeter'=>$faker->word,
 				'facebook'=>$faker->word,
@@ -22,7 +22,6 @@ class UserProfileTableSeed extends Seeder{
 
 			));
 		}
-		/*}*/
 
 	}
 }

@@ -17,8 +17,8 @@ class CreateProductosTable extends Migration
             $table->string('Referencia')->unique();
             $table->string('Marca');
             $table->string('Descripcion');
-            $table->string('Precio');
-            $table->string('Thumbnail')->default('dummy-icon.png');
+            $table->decimal('Precio');
+            $table->string('Thumbnail');
             $table->string('minetype')->default('image/png');
             $table->integer('whoedit')->default(1);
 

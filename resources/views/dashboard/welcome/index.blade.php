@@ -37,8 +37,7 @@
 </style>
 
 @section('content')
-<div class="container">
-    <div class="content">
+    <div class="content" style="float:right; padding: 20px; background: #E4E4E4; box-shadow: rgba(0, 0, 0, 0.19) 3px 5px 18px 1px;">
         <div class="title">Bienvenido {{ Auth::user()->name }} {{ Auth::user()->last }},</div>
         <div class="msg">
             Esta es una prueba, tienes un rol de <b>{{ Auth::user()->type }}</b> puedes:
@@ -51,7 +50,6 @@
             </lo>
         </div>
     </div>
-</div>
 @endsection
 @section('scripts')
 @endsection

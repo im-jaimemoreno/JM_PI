@@ -6,7 +6,7 @@
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<b style="display:inline-block;">Editar Usuario: {{$user->name}}</b>
+					<b style="display:inline-block;">Editar Información Básica Usuario </b>
 					@include('administrador.partials.back')
 				</div>
 				

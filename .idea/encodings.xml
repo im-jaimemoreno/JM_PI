@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/database/seeds/FirstAdminSeed.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/assets/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/administrador/partials/back.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/administrador/users/create.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/administrador/users/edit.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/administrador/users/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/auth/login.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/contactanos/edit.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/contactanos/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/productos/create.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/productos/edit.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/productos/listaproduct.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/productos/partials/back.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/public/index.blade.php" charset="UTF-8" />
+  </component>
+</project>

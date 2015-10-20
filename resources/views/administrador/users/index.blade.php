@@ -11,6 +11,7 @@
                     @if(Session::has('message'))
                         <p class="alert alert-success">{{Session::get('message')}}</p>
                     @endif
+                    <p class="alert alert-success"></p>
                     <div class="panel-body">
 
                         <p>
@@ -30,24 +31,32 @@
 @section('scripts')
     <script>
         $(document).ready(function(){
+            $('.alert-success').hide();
             $('.btn-delete').click(function(){
                 var row = $(this).parents('tr');
                 var id = row.data('id');
-                var form =$('#form-delete');
-                var url = form.attr('action').replace(':USERS_ID',id);
-                var data = form.serialize();
-                //alert(url);
-                //alert(row);
-                //console.log(id);
-                row.fadeOut();
+                if( id != 1){
 
-                $.post(url, data, function(result){
-                    //alert(result.message);
-                }).fail(function(){
-                    //alert('El usuario no fue eliminado');
-                    row.show();
-                });
+                    var form =$('#form-delete');
+                    var url = form.attr('action').replace(':USERS_ID',id);
+                    var data = form.serialize();
 
+                    row.fadeOut();
+
+                    $.post(url, data, function(result){
+                        $('.alert-success').text('El usuario no fue eliminado');
+                        $(".alert-success").show().delay(2000).fadeOut();
+                    }).fail(function(){
+                        alert('El usuario no fue eliminado');
+                        row.show();
+                    });
+                }
+                else{
+
+                    $('.alert-success').text('Este usuario no debe ser borrado');
+                    $(".alert-success").show().delay(2000).fadeOut();
+
+                }
 
             });
 

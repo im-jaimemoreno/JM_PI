@@ -44,27 +44,29 @@ class UsersProfileController extends Controller {
 		$profile->facebook =$request->facebook;
 		$profile->website =$request->website;
 
+		$user->birthday = $request->birthday;
+		$user->email = $request->email;
+		$user->phone = $request->phone;
+
 		$file = $request->file('profilePicture');
-		$ext = $file->getClientOriginalExtension();
-		$mine = $file->getClientMimeType();
-		$profile->photo = $user->id.'.'.$ext;
-		$profile->minetype = $mine;
-		/*$mime = Input::file('profilePicture')->getMimeType();*/
-		\Storage::disk('local')->put('/profile-pics/'. $profile->photo,\File::get($file));
-		//$profile->photo = $user->id.'.'.$ext;
-		//$public_path = public_path();
-		//$url = $public_path.'/upload/images/profile-pics/'.$user->id.'.'.$ext;
+		if (\Input::hasFile('profilePicture'))
+		{
+			$file = $request->file('profilePicture');
+			$ext = $file->getClientOriginalExtension();
+			$mine = $file->getClientMimeType();
+			$profile->photo = $user->id.'.'.$ext;
+			$profile->minetype = $mine;
+			/*$mime = Input::file('profilePicture')->getMimeType();*/
+			\Storage::disk('local')->put('/profile-pics/'. $profile->photo,\File::get($file));
+		}
 
-		//$profile->photo = $url;
-		//$profile->photo = $user->id.'.'.$ext;
-		//$profile->minetype = $mine;
-
+		$user->update();
 		$profile->update();
 
-		//$public_path = public_path();
-		//$url = $public_path.'/storage/'.$user->id;
+		$profile = Profile::findOrFail($id);
+		$user = User::findOrFail($profile->user_id);
 
-		return view('administrador.users.profile.edit', compact('user', 'profile'));
+		return view('administrador.users.profile.index', compact('user', 'profile'));
 
 	}
 	public function sendMail(){

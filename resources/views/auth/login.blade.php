@@ -43,7 +43,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <legend>Sign In</legend>
                     <div class="form-group">
-                        <label for="email">E-mail or Username</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
@@ -53,14 +53,14 @@
                     <div class="input-group">
                         <div class="checkbox">
                             <label>
-                                <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                <input id="login-remember" type="checkbox" name="remember" value="1"> Recordarme
                             </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Login" />
                     </div>
-                    <span class='text-center'><a href="/resetting/request" class="text-sm">Forgot Password?</a></span>
+                    <span class='text-center'><a href="/resetting/request" class="text-sm">Olvidaste la contraseña?</a></span>
                 </form>
 
             </div>

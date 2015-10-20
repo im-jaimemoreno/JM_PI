@@ -6,50 +6,87 @@
 			<div class="col-md-10 col-md-offset-1">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<b>Editando Perfil</b>
-						<a class="pull-right" href="{{route('administrador.users.profile', $user->id)}}"><img src="{{asset('images/btn-back.png')}}" alt="" style="  width: 25px;"></a>
+						<b>Perfil</b>
+						@include('administrador.partials.back')
 					</div>
-					@if(Session::has('message'))
-						<p class="alert alert-success">{{Session::get('message')}}</p>
-					@endif
-					<div class="panel-body">
-						<div class="container">
-							<div class="col-lg-8">
-								<br>
+					<div class="container">
+						@if(Session::has('message'))
+							<p class="alert alert-success">{{Session::get('message')}}</p>
+						@endif
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" style="padding:10px 0px;" >
+								<div class="panel panel-info">
+									<div class="panel-body">
+										{!!  Form::model($profile, ['method' => 'PUT', 'route' => ['administrador.users.profile.update', $profile->id], 'class' => 'form-horizontal','id' => 'editForm', 'files' => true]) !!}
+										<div class="panel-body">
+											<div class="row text-center">
+												<div class="col-md-4">
+													<img src="{{route('administrador.users.profile.photo', $profile->photo)}}" id="profileImage" class="img-circle" style="width: 100px;">
+												</div>
+												<div class=" col-md-8" style="font-family: sans-serif; text-transform: uppercase; "><h3>{{$user->name}} {{$user->last}}</h3></div>
+												<div><input type="file" id="profilePicture" name="profilePicture" onchange="changeProfilePicture()" style="float: right; padding: 5px 10px; background: #E2DFDF; margin: 0px 10px;    font-size: 11px;    color: #2F2F2F;"></div>
+											</div>
+											<br>
+											<div class="row text-center">
+												<table class="table table-bordered table-striped table-hover">
+													<tbody>
+													<tr>
+														<td>Fecha de Nacimiento:</td>
+														<td><input type="date" id="birthday" name="birthday" value="{{$user->birthday}}" style=" border: 1px solid #E4E4E4; ">
+													</tr>
+													<tr>
+														<td>Biografía:</td>
+														<td><input id="bio" name="bio" value="{{$profile->bio}}" style=" border: 1px solid #E4E4E4;"></td>
+													</tr>
+													<tr>
+														<td>Twitter</td>
+														<td><input id="twetter" name="tweeter" rows=2 cols=80 value="{{$profile->tweeter}}" style=" border: 1px solid #E4E4E4; "></td>
+													</tr>
+													<tr>
+														<td>Facebook</td>
+														<td><input id="facebook" name="facebook" rows=2 cols=80 value="{{$profile->facebook}}"  style=" border: 1px solid #E4E4E4; "></td>
+													</tr>
+													<tr>
+														<td>Website</td>
+														<td><input id="website" name="website" rows=2 cols=80 value="{{$profile->website}}"  style="border: 1px solid #E4E4E4;"></td>
+													</tr>
+													<tr>
+														<td>Correo Eléctronico</td>
+														<td><input type="mail" id="email" name="email" rows=2 cols=80 value="{{$user->email}}"  style=" border: 1px solid #E4E4E4;"></td>
+													</tr>
+													<td>Teléfono</td>
+													<td>
+														<ul class="phone" style="padding: 0px;">
+															<input type="number" id="phone" name="phone" rows=2 cols=80 value="{{$user->phone}}"  style=" border: 1px solid #E4E4E4;">
+														</ul>
+													</td>
 
-								<div class="col-lg-9">
-									<img src="{{route('administrador.users.profile.photo', $profile->photo)}}" id="profileImage" class="col-lg-3">
-									{!!  Form::model($profile, ['method' => 'PUT', 'route' => ['administrador.users.profile.update', $profile->id], 'class' => 'form-horizontal','id' => 'editForm', 'files' => true]) !!}
-										<input type="file" id="profilePicture" name="profilePicture" onchange="changeProfilePicture()">
-										<br>
-										<label for="bio"> Biografía </label>
-										<input id="bio" name="bio" rows=5 cols=80 value="{{$profile->bio}}">
-										<label for="twetter"> Twitter </label>
-										<input id="twetter" name="tweeter" rows=2 cols=80 value="{{$profile->tweeter}}">
-										<label for="facebook"> Facebook </label>
-										<input id="facebook" name="facebook" rows=2 cols=80 value="{{$profile->facebook}}">
-										<label for="website"> Website </label>
-										<input id="website" name="website" rows=2 cols=80 value="{{$profile->website}}">
-										<div id="mediaProgress" class="progress progress-striped active" style="display: none">
-											<div id="progressBar" class="progress-bar progress-bar-primary"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-												<span class="sr-only">45% Complete</span>
+													</tr>
+
+													</tbody>
+												</table>
 											</div>
 										</div>
-										{!!Form::submit('Create User')!!}
-									{!! Form::close() !!}
+
+										<div class="panel-footer">
+											<span>
+												<input type="submit" data-original-title="Edit" data-toggle="tooltip" value="Guardar"class="btn btn-sm btn-success">
+											</span>
+										</div>
+										{!! Form::close() !!}
 								</div>
 							</div>
-							<div class="col-lg-6">
-
-							</div>
 						</div>
-
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
 @endsection
+
+
+
 @section('scripts')
 	<script>
 		var Pgb =  function(elem) {
@@ -120,6 +157,9 @@
 					}
 				});
 			});*/
+			if($('.name_add').text() == 'Jaime Moreno'){
+				$('.name_add').html('<i class="glyphicon glyphicon-sunglasses"></i>'+$('.name_add').html()+'</b>');
+			}
 			$('.update').click(function(e) {
 				e.preventDefault();
 
@@ -140,5 +180,6 @@
 				return false;
 			});
 		});
+
 	</script>
 @endsection

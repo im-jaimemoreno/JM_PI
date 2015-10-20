@@ -5,7 +5,7 @@ use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
 
 use App\Models\Contactanos;
-
+use App\Models\User;
 class ContactanosController extends Controller
 {
     /**
@@ -57,9 +57,15 @@ class ContactanosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function findUser(Route $route){
+        $this->user = Contactanos::findOrFail($route->getParameter('users'));
+    }
     public function edit($id)
     {
-        //
+        $contacto = Contactanos::findOrFail($id);
+        $user_id = $contacto->whoedit;
+
+        return view('contactanos.edit', compact('contacto', 'user_id'));
     }
 
     /**
@@ -71,7 +77,21 @@ class ContactanosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contacto = Contactanos::findOrFail(1);
+
+        $contacto->whoedit = $id;
+        $contacto->phone = $request->phone;
+        $contacto->mobile= $request->mobile;
+        $contacto->adress = $request->phone;
+        $contacto->mail= $request->mail;
+        $contacto->facebook = $request->facebook;
+        $contacto->twitter = $request->twitter;
+        $contacto->pinterest = $request->pinterest;
+
+        $contacto->update();
+        $contactanos = Contactanos::paginate();
+
+        return view('contactanos.index', compact('contactanos') );
     }
 
     /**

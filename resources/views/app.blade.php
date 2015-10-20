@@ -7,10 +7,11 @@
  */
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8_spanish_ci" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
@@ -39,10 +40,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-
-{!! Html::script('assets/js/morris/raphael.min.js')!!}
-{!! Html::script('assets/js/morris/morris.min.js')!!}
-{!! Html::script('assets/js/morris/morris-data.js')!!}
 @yield('scripts')
 
 </body>
