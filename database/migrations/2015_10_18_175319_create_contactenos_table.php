@@ -14,6 +14,14 @@ class CreateContactenosTable extends Migration
     {
         Schema::create('Contactenos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('whoedit')->unsigned()->default(1);
+            $table->string('phone');
+            $table->string('mobile');
+            $table->string('adress');
+            $table->string('mail');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('pinterest');
             $table->timestamps();
         });
     }

@@ -47,13 +47,13 @@
                     <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Perfil</a>
+                    <a href="{{route('administrador.users.profile', Auth::user()->id)}}"><i class="fa fa-fw fa-bar-chart-o"></i> Perfil</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Usuarios</a>
+                    <a href="{{route('administrador.users.index', Auth::user()->id)}}"><i class="fa fa-fw fa-table"></i> Usuarios</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Productos</a>
+                    <a href="{{route('productos.listaproduct')}}"><i class="fa fa-fw fa-table"></i> Productos</a>
                 </li>
                 <li>
                     <a href="tables.html"><i class="fa fa-fw fa-table"></i> Info.Contacto</a>

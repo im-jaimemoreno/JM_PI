@@ -30,7 +30,17 @@ Route::group(['prefix'=>'administrador', 'namespace' => 'Admin'], function(){
     Route::get('users/profile/photo/{users}', ['as'=>'administrador.users.profile.photo', 'uses'=>'UsersProfileController@getProfilePhoto']);
     //Route::post('users/{users}/profile/edit/update', ['as'=>'administrador.users.profile.update', 'UsersProfileController@update']);
     Route::get('user/{users}/profile/email', ['as'=>'administrador.users.profile.email', 'uses'=>'UsersProfileController@sendMail'] );
+
+    Route::group(['prefix'=>'productos', 'namespace' => 'Product'], function() {
+        Route::get('items',['as'=>'productos.listaproduct', 'uses'=>'ProductoController@index']);
+        //::get('items/{item}',['as'=>'productos.productodet', 'uses'=>'ProductoController@item']);
+    });
+    Route::resource('contactanos', 'ContactanosController');
+    /*Route::group(['prefix'=>'Contactanos', 'namespace' => 'Contactanos'], function() {
+        Route::get('contactenos',['uses'=>'UsersProfileController@profile']);
+    });*/
 });
+
 //Route::put('administrador.users.profile.update','UsersProfileController@update' );
 Route::get('formulario', 'StorageController@index');
 
@@ -43,3 +53,6 @@ Route::filter('roles', function($ruta,$peticion,$roles,$redirect){
         return Redirect::to($redirect);
 
 });
+/*Route::get('productos','ProductosController@index');*/
+
+

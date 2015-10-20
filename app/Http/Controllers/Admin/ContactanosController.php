@@ -1,12 +1,12 @@
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+<?php namespace App\Http\Controllers\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Routing\Route;
+use Illuminate\Http\Request;
 
-class UserController extends Controller
+use App\Models\Contactanos;
+
+class ContactanosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        $contactanos = Contactanos::paginate();
+        return view('contactanos.index', compact('contactanos') );
     }
 
     /**

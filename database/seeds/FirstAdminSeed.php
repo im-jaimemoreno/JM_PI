@@ -27,5 +27,12 @@ class FirstAdminSeed extends Seeder
             'facebook'=>'imjaimemoreno',
             'website'=>'...',
         ));
+        /*\DB::table('Productos')->insert(array(
+            'user_id'=>1,
+            'bio'=>'Hi esta es una prueba',
+            'tweeter'=>'jaimemorenoj',
+            'facebook'=>'imjaimemoreno',
+            'website'=>'...',
+        ));*/
     }
 }

@@ -12,13 +12,16 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('Productos', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('referencia')->unique();
-            $table->string('Nombre');
+            $table->string('Referencia')->unique();
             $table->string('Marca');
             $table->string('Descripcion');
             $table->string('Precio');
+            $table->string('Thumbnail')->default('dummy-icon.png');
+            $table->string('minetype')->default('image/png');
+            $table->integer('whoedit')->default(1);
+
             $table->timestamps();
         });
     }

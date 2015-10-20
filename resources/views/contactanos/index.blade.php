@@ -6,25 +6,28 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <b>Lista de Productos</b>
+                        <b>Contacto</b>
                     </div>
                     @if(Session::has('message'))
                         <p class="alert alert-success">{{Session::get('message')}}</p>
                     @endif
                     <div class="panel-body">
-
-                        <p>
-                            <a href="{{ route('administrador.users.create')}}" style="float: right; margin: 10px;" class="btn btn-info" role="button">Nuevo Usuario</a>
-                        </p>
-                        @include('productos.partials.list')
-                        {!! $productos->render()!!}
+                        @foreach($contactanos as $contacto)
+                            <div>{!! $contacto->adress !!}</div>
+                            <div>{!! $contacto->mobile !!}</div>
+                            <div>{!! $contacto->phone !!}</div>
+                            <div>{!! $contacto->mail !!}</div>
+                            <div>{!! $contacto->facebook !!}</div>
+                            <div>{!! $contacto->twitter !!}</div>
+                            <div>{!! $contacto->pinterest !!}</div>
+                        @endforeach
+                        {!! $contactanos->render()!!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {!!Form::open(['route'=>['administrador.users.destroy', ':USERS_ID'], 'method'=>'DELETE', 'id' =>'form-delete'])!!}
-    {!!Form::close()!!}
+
 @endsection
 
 @section('scripts')
