@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/database/seeds/FirstAdminSeed.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/assets/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/administrador/masterpage/index.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/administrador/partials/back.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/administrador/users/create.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/administrador/users/edit.blade.php" charset="UTF-8" />

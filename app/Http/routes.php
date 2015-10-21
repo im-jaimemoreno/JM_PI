@@ -12,7 +12,9 @@
 */
 
 Route::resource('/','principal\PrincipalController');
+
 Route::get('photo/{id}',['as'=>'photohero', 'uses'=>'principal\PrincipalController@getHeroPhoto']);
+Route::get('masterphoto/{id}',['as'=>'masterpagehero', 'uses'=>'Admin\Page\masterpageController@getHeroPhoto']);
 
 Route::get('administrador',['middleware' => 'auth','uses'=>'HomeController@index'] );
 
@@ -31,6 +33,10 @@ Route::group(['prefix'=>'administrador', 'namespace' => 'Admin'], function(){
     //Route::post('users/{users}/profile/edit/update', ['as'=>'administrador.users.profile.update', 'UsersProfileController@update']);
     Route::get('user/{users}/profile/email', ['as'=>'administrador.users.profile.email', 'uses'=>'UsersProfileController@sendMail'] );
 
+    Route::group(['prefix'=>'masterpage', 'namespace' => 'Page'],function(){
+        Route::get('/',['as'=>'administrador.masterpage', 'uses'=>'masterpageController@index']);
+
+    });
     Route::group(['prefix'=>'productos', 'namespace' => 'Product'], function() {
         Route::get('items',['as'=>'productos.listaproduct', 'uses'=>'ProductoController@index']);
         Route::get('items/{item}/delete',['as'=>'productos.listaproduct.destroy', 'uses'=>'ProductoController@destroy']);
@@ -42,12 +48,8 @@ Route::group(['prefix'=>'administrador', 'namespace' => 'Admin'], function(){
         //::get('items/{item}',['as'=>'productos.productodet', 'uses'=>'ProductoController@item']);
     });
     Route::resource('contactanos', 'ContactanosController');
-    /*Route::group(['prefix'=>'Contactanos', 'namespace' => 'Contactanos'], function() {
-        Route::get('contactenos',['uses'=>'UsersProfileController@profile']);
-    });*/
 });
 
-//Route::put('administrador.users.profile.update','UsersProfileController@update' );
 Route::get('formulario', 'StorageController@index');
 
 //Route::post('storage/create', ['as'=>'new', 'uses'=>'StorageController@save']);
