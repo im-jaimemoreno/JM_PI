@@ -5,7 +5,7 @@
 <html lang="es-ES">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Document</title>
+    <title>Prueba Jaime Moreno Front-End</title>
     {!! Html::style('assets/css/bootstrap.css') !!}
     {!! Html::style('assets/css/app.css') !!}
     {!! Html::style('assets/css/style.css') !!}
@@ -168,16 +168,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About</h2>
+                    <h2>Lorem Ipsum</h2>
                     <hr class="star-light">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nibh suscipit, facilisis arcu vel, ultrices est. Integer aliquam dolor at mi commodo, a vehicula dui consequat. Morbi feugiat pulvinar ipsum sit amet rhoncus. Aliquam id nisi euismod, cursus enim vel, ullamcorper dolor. Nulla pellentesque ligula eu sagittis consectetur.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nibh suscipit, facilisis arcu vel, ultrices est. Integer aliquam dolor at mi commodo, a vehicula dui consequat. Morbi feugiat pulvinar ipsum sit amet rhoncus. Aliquam id nisi euismod, cursus enim vel, ullamcorper dolor. Nulla pellentesque ligula eu sagittis consectetur.</p>
                 </div>
             </div>
         </div>
