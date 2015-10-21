@@ -20,7 +20,7 @@ class PrincipalController extends Controller
     {
         $productos = Producto::paginate('6');
         $contactanos = Contactanos::paginate();
-        $pagemaster = PaginaMaster::paginate(1);
+        $pagemaster = PaginaMaster::paginate();
 
         return view('public.index',compact('productos','contactanos','pagemaster'));
     }

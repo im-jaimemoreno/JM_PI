@@ -38,7 +38,7 @@ class FirstAdminSeed extends Seeder
                 'id' => 1,
                 'PhotoHero'=>'hero1.jpg',
                 'minetype'=>'image/jpeg',
-                'Title'=>'INNOVACIÓN Y FLEXIBIBLIDAD',
+                'Title'=>'INNOVACIÓN Y FLEXIBILIDAD',
                 'content'=>'Resultados de calidad',
 
                 'whoedit'=>1
@@ -58,10 +58,10 @@ class FirstAdminSeed extends Seeder
 
         \DB::table('PaginaMaestra')->insert(array(
             'id' => 3,
-            'PhotoHero'=>'hero1.jpg',
+            'PhotoHero'=>'hero3.jpg',
             'minetype'=>'image/jpeg',
             'Title'=>'CREATIVIDAD Y ARTE',
-            'content'=>'Van juntas de la mano',
+            'content'=>'Van juntos de la mano',
 
             'whoedit'=>1
 

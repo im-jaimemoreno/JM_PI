@@ -29,4 +29,5 @@ $(document).ready(function(){
     aux = aux.substr(0,80);
     $(this).html(aux+" <a href='#'><b>Ver más</b>...</a>");
   });
+  $()
 });

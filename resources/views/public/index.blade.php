@@ -71,49 +71,42 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item slides active">
-
                     <div class="hero">
                         <hgroup>
-                            <h1>We are creative</h1>
-                            <h3>Get start your next awesome project</h3>
+                            <h1>{{$pagemaster[0]->Title}}</h1>
+                            <h3>{{$pagemaster[0]->content}}</h3>
                         </hgroup>
-                        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                        <button class="btn btn-hero btn-lg" role="button">Boton dummy</button>
                     </div>
                     <!-- Overlay -->
                     <div class="overlay"></div>
-                    <img src="{{route('photohero', 1)}}">
-                    <!--div class="slide-1" ></div-->
-
+                    <img src="{{route('photohero', $pagemaster[0]->id)}}">
                 </div>
-                <div class="item slides">
+                <div class="item slides ">
                     <div class="hero">
                         <hgroup>
-                            <h1>We are smart</h1>
-                            <h3>Get start your next awesome project</h3>
+                            <h1>{{$pagemaster[1]->Title}}</h1>
+                            <h3>{{$pagemaster[1]->content}}</h3>
                         </hgroup>
-                        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                        <button class="btn btn-hero btn-lg" role="button">Boton dummy</button>
                     </div>
                     <!-- Overlay -->
                     <div class="overlay"></div>
-                    <img src="{{route('photohero', 2)}}">
-                    <!--div class="slide-2"></div-->
-
-
+                    <img src="{{route('photohero', $pagemaster[1]->id)}}">
                 </div>
-                <div class="item slides">
+                <div class="item slides ">
                     <div class="hero">
                         <hgroup>
-                            <h1>We are amazing</h1>
-                            <h3>Get start your next awesome project</h3>
+                            <h1>{{$pagemaster[2]->Title}}</h1>
+                            <h3>{{$pagemaster[2]->content}}</h3>
                         </hgroup>
-                        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                        <button class="btn btn-hero btn-lg" role="button">Boton dummy</button>
                     </div>
                     <!-- Overlay -->
                     <div class="overlay"></div>
-                    <img src="{{route('photohero', 3)}}">
-                    <!--div class="slide-3"></div-->
-
+                    <img src="{{route('photohero', $pagemaster[2]->id)}}">
                 </div>
+
             </div>
         </div>
 
